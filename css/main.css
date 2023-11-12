@@ -1,0 +1,896 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  
+  /*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+  
+  ::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  ::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  /*
+   * A better looking default horizontal rule
+   */
+  
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+  /*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+  
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
+  
+  /*
+   * Remove default fieldset styles.
+   */
+  
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*
+   * Allow only vertical resizing of textareas.
+   */
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+  
+  /* ==========================================================================
+     Helper classes
+     ========================================================================== */
+  
+  /*
+   * Hide visually and from screen readers
+   */
+  
+  .hidden,
+  [hidden] {
+    display: none !important;
+  }
+  
+  /*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+  
+  .sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
+  }
+  
+  /*
+   * Extends the .sr-only class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+  
+  .sr-only.focusable:active,
+  .sr-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+  }
+  
+  /*
+   * Hide visually and from screen readers, but maintain layout
+   */
+  
+  .invisible {
+    visibility: hidden;
+  }
+  
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  
+  .clearfix::before,
+  .clearfix::after {
+    content: " ";
+    display: table;
+  }
+  
+  .clearfix::after {
+    clear: both;
+  }
+  
+  /* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+  
+  @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+  }
+  
+  @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+  }
+  
+  /* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+  
+  @media print {
+    *,
+    *::before,
+    *::after {
+      background: #fff !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+  
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]::after {
+      content: " (" attr(title) ")";
+    }
+  
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+  
+    pre {
+      white-space: pre-wrap !important;
+    }
+  
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+  
+    /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+      display: table-header-group;
+    }
+  
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+  
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  
+    
+    /* aby: test scroll snap */
+    /*
+    #fullpage {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    }
+    .section {
+        padding: 1em 2em;
+        scroll-snap-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    */
+
+    /* aby: imported from fullpage.js and barebones.css*/
+
+
+    .fp-overflow {
+        padding: 0 1em;
+    }
+    #fp-nav.fp-left {
+        left: 0.1em;
+    }
+  
+    /* Centered texts in each section
+    * --------------------------------------- */
+    .section {
+        text-align:center;
+    }
+
+    /* Fixed header and footer.
+    * --------------------------------------- */
+    #header, #footer{
+        position:fixed;
+        height: 80px;
+        display:block;
+        width: 100%;
+        background: rgb(223, 218, 199);
+        z-index:9;
+        text-align:center;
+        color: #f2f2f2;
+        padding: 10px 0 0 0;
+    }
+
+    #header{
+        top:0px;
+    }
+    #footer{
+        bottom:0px;
+    }
+
+
+    /* Bottom menu
+    * --------------------------------------- */
+    #infoMenu {
+        bottom: 80px;
+    }
+    #infoMenu li a {
+        color: #fff;
+        z-index: 999;
+    }
+
+    /*******
+    
+    aby: our custom CSS for this theme
+    
+    *******/
+
+      
+    html{
+        --ua-pallete-1: rgb(69,69,50);
+        --ua-pallete-2: rgba(223,218,199, 0.7);
+        --ua-pallete-3: rgb(220,220,220);
+        --ua-pallete-4: rgb(243,243,243);
+    }
+    h1, h2, h3, h4, h5 {
+        letter-spacing: 0;
+    }
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    /* #fp-nav ul li::before {
+      content: "\2022";  
+      color: var(--ua-pallete-4); 
+    } */
+
+    /* Sections backgrounds
+    * --------------------------------------- */
+    body, #sectHome{
+        background-image: url('../img/silky-bg.jpg');
+        background-size: cover;
+    }
+    
+    #sectLove{
+        background-image: linear-gradient(180deg, var(--ua-pallete-3), var(--ua-pallete-4));
+        /*background-image: linear-gradient(180deg,rgb(223,218,199),rgb(227,227,227));*/
+    }
+    
+    #sectLocDate{
+        /*background-image: linear-gradient(180deg,rgba(227,227,227,1), rgba(243,243,243,0.6));*/
+        /*background-image: linear-gradient(0deg,rgb(223,218,199),rgb(227,227,227));*/
+    }
+    
+    #sectQuote{
+        /* background-image: linear-gradient(0deg,rgb(227,227,227), rgb(243,243,243)); */
+        /* background-image: linear-gradient(0deg,rgb(223,218,199), rgb(243,243,243)); */
+        /* background-image: linear-gradient(0deg,rgb(223,218,199),rgb(227,227,227)); */
+        background-color: rgbq(243,243,243, 0.7);
+    }
+    
+    @font-face {
+        font-family: BrittanySignature;
+        src: url('BrittanySignature.ttf');
+    }
+    @font-face {
+        font-family: FuturisticStylish;
+        src: url('Futuristic Stylish.otf');
+    }
+    @font-face {
+        font-family: HelloFont;
+        src: url('Hello.ttf');
+    }
+    
+    /* floatNav */
+    #floatNav {
+        display: flex;
+        flex-direction: row; 
+        z-index: 99999999;
+        position: absolute;
+        right: 0.5em;
+        bottom: 2em;
+    }
+    #floatNav .material-symbols-outlined {
+        margin: 0 0 0.1em 0.1em;
+        font-size: 1.5rem;
+        padding: 0.3em;
+        background-color: var(--ua-pallete-2);
+        /* border: 1px solid var(--ua-pallete-1); */
+        border: 1px solid none;
+        border-radius: 1em;
+    }
+
+    #floatNav .material-symbols-outlined .ua-logo-menu {
+        background: url('../img/ua-logo-bw-32x32.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-height: 1em;
+        min-width: 1em;
+    }
+
+    /* sectHome */
+    #sectHome .grid-container {
+        gap: 0.7em;
+    }
+      
+    #sectHome h1 {
+      font-family: BrittanySignature;
+      font-size: 3.5rem;
+      color: rgb(90,99,56);
+      margin-bottom: 0.1em;
+    }
+    #sectHome h2 {
+        font-family: HelloFont;
+        font-size: 3.2rem;
+        color: rgb(69,69,50);      
+        margin-bottom: 0.7em;
+    }
+  
+    #sectHome #sectHomeContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    #sectHome .image-front {
+        min-height: 20vh;
+        display: block;
+        background-image: url('../img/flower.ai.3.png');
+        background-repeat: no-repeat;
+        background-position: center -25px;
+        background-size: contain;
+        background-clip: border-box;
+        padding: 3.3em 0 3.3em 0;
+        margin: -3.7em 0 -0.7em 0;
+        flex: auto;
+    }
+    #sectHome h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: 0.2em;
+    }
+    #sectHome #namaundangan{
+        font-family: HelloFont;
+        font-size: 2rem;    
+    }
+    #sectHome h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        margin-bottom: 0.2em;
+    }
+    #sectHome h5 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        margin-bottom: 0.2em;
+    }
+  
+    /* sectLove */
+    #sectLove {
+        
+    }
+    #sectLove2{
+        display: flex;
+        flex-direction: row;
+    }
+    #sectLove p, #sectLove h3, #sectLove h4, #sectLove h5 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.96rem;
+        color: var(--ua-pallete-1);
+        margin-bottom: 0.8rem;
+      }
+    #sectLove h1 {
+        font-family: FuturisticStylish;
+        font-size: 3.2rem;
+        color: var(--ua-pallete-1);
+        margin-block-end: 0.1em;
+    }
+
+    #sectLove #sectLove1a {
+        text-align: left;
+    }
+    #sectLove #sectLove1b {
+        text-align: right;
+    }
+
+    #sectLove h2 {
+        font-family: BrittanySignature;
+        font-size: 8rem;
+        color: var(--ua-pallete-1);
+        margin: -1em 0 -0.4em 1em;
+    }
+
+    #sectLove #image-love {
+        /*min-height: 12em;*/
+        margin: 0;
+        display: block;
+        background-image: url('../img/ring-o.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-clip: border-box;
+        /*background-size: 50%;*/
+        /*background-position: bottom 10% left 0px;*/
+        border-radius: 1em;
+        /* border: solid 1px var(--ua-pallete-1); */
+        flex:auto;
+    }
+    #sectLove #locdate {
+        margin: 2em 0.4em 3em 0.4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 40vw;
+    }
+    #sectLove > .locdatetime {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 2em;
+    }
+    #sectLove h3 {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    #sectLove .grid-container{
+        gap: 0.1em;
+        padding: 0;
+    }
+
+    #sectLove h4 {
+        font-size: 1rem;
+        margin-bottom: 0;
+        background-color: var(--ua-pallete-2);
+    }
+
+    #sectLove h5 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    /* sectLocDate */
+    #sectLocDate h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        color: rgb(69,69,50);
+        margin-bottom: 0;
+    }
+
+    #sectLocDate h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+        color: rgb(69,69,50);
+        background-color: rgb(223,218,199);
+        margin-bottom: 0;
+    }
+
+    #sectLocDate p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+        color: rgb(69,69,50);
+    }
+
+    /* sectQuote */
+    #sectQuote #image-decor {
+        margin-left: -2em;
+        width: 60vw;
+        min-height: 25vh;
+        /*background-color: whitesmoke;*/
+        background-image: url('../img/flower-also.png');
+        background-size: contain;
+        background-position: bottom 10% left 0px;
+        background-repeat: no-repeat;
+      }
+    #sectQuote .sectQuoteContainer
+    {
+        padding: 0 5vw 0 25vw;
+    }
+    #sectQuote p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.96rem;
+        color: var(--ua-pallete-1);
+        margin-bottom: 0.7px;
+        text-align: right;
+    }
+    #sectQuote .arabic {
+        font-size: 2rem;
+    }
+
+    #sectQuote .fp-watermark {
+        text-align: left;
+        /* width: 100%; */
+        background-image: url('../img/ua-love.png');
+        background-size: 6.3em;
+        background-position: right;
+        margin: 0 0.5em 0 0;
+        padding: 0 50vw 0 0;
+        background-repeat: no-repeat;
+    }
+
+@media (max-width: 300px) { 
+    #sectHome h1 {
+        font-size: 2.6rem;
+    }
+    #sectHome h2 {
+        font-size: 2.4rem;
+    }
+    #sectHome h3 {
+        font-size: 1.2rem;
+    }
+    #sectHome #namaundangan{
+        font-size: 1.6rem;    
+    }
+    #sectHome h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.7em;
+    }
+    #sectHome h5 {
+        font-size: 0.7rem;
+    }
+    #sectHome .image-front {
+        min-height: 17vh;
+        padding: 2.3em 0 2.3em 0;
+        margin: -2.7em 0 -0.7em 0;
+    }
+
+}
+
+@media (min-width: 400px) { 
+    .fp-overflow {
+        padding: 0 1.5em;
+    }
+    #fp-nav.fp-left {
+        left: 0.2em;
+    }
+}
+
+/* for tablet-portrait-up or phone landscape */
+@media (min-width: 600px) { 
+
+    .fp-overflow {
+        padding: 0 2em;
+    }
+    
+    #sectQuote .fp-watermark {
+        padding: 0 75vw 0 0;
+    }
+    #fp-nav.fp-left {
+        left: 0.4em;
+    }
+    
+    @media (orientation:landscape) {
+        
+        #sectHome .image-front {
+            left: 8vw;
+            padding: 0;
+            position: absolute;
+            min-width: 20vw;
+            min-height: 100vh;
+            top: 20vh;
+        }
+        #sectQuote p {
+            font-size: 1.2rem;
+        }
+        #sectQuote .arabic {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-height: 599px) { /* small screen landscape */
+
+        #floatNav {
+            flex-direction: column; 
+        }
+
+        #sectHome h2{
+            margin-bottom: 0.2em;
+        }
+
+        #sectLove p, #sectLove h3, #sectLove h4, #sectLove h5 {
+            font-size: 0.9rem;
+        }
+        #sectLove #sectLove1 {
+            display: flex;
+        }
+        #sectLove #sectLove1 > p {
+            margin: auto;
+        }
+        #sectLove #sectLove1 h2 {
+            margin: 0.1em;
+        }
+        #sectLove #sectLove1a, 
+        #sectLove #sectLove1b  {
+            margin: auto;
+        }
+        
+        #sectLove #sectLove1a,
+        #sectLove #sectLove1b  {
+            min-width: 25vw;
+        }
+        #sectLove #sectLove1a {
+            text-align:right;
+        }
+        #sectLove #sectLove1b {
+            text-align:left;
+        }
+        
+        #sectLove #locdate{
+            min-width: 44vw;
+            margin: 0 auto 0 0.8em;
+        }
+        #sectLove #locdate > div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #sectLove #locdate > div > div{
+            margin: 0.2em;
+        }
+
+        #sectQuote #image-decor {
+            /* background-size: 40vw; */
+            /* background-position: bottom 25% left 0px; */
+            position: absolute;
+            width: 25vw;
+            min-height: 50vh;
+            bottom: 10vh;
+        }
+    }
+
+    @media (min-height: 600px) { /* tablet portrait */
+        #floatNav {
+            right: 2em;
+        }
+        #floatNav .material-symbols-outlined {
+            font-size: 2.5rem;
+        }
+        #sectQuote .fp-watermark {
+            padding: 0 65vw 0 0;
+            margin: 0 2em 0 0;
+        }
+        /* sectHome */
+        #sectHome h1 {
+            font-size: 5.6rem;
+        }
+        #sectHome h2 {
+            font-size: 4.6rem;
+            margin-bottom: 0.3em;
+        }
+        #sectHome h3 {
+            font-size: 2rem;
+        }
+        #sectHome #namaundangan{
+            font-size: 3.2rem;    
+        }
+        #sectHome h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.7em;
+        }
+        #sectHome h5 {
+            font-size: 1.1rem;
+        }
+        #sectHome h5 br {
+            content: '';
+        }
+
+        #sectLove p, #sectLove h3, #sectLove h4, #sectLove h5 {
+            font-size: 1.4rem;
+        }
+
+        #sectLove h1 {
+            font-size: 4rem;
+        }
+
+        #sectLove h2 {
+            font-size: 9rem;
+            margin: -1em 0 -0.4em 0.3em;
+        }
+        
+        #sectQuote p {
+            font-size: 1.4rem;
+        }
+        #sectQuote .arabic {
+            font-size: 3rem;
+        }
+        #sectQuote #image-decor {
+            position: absolute;
+            width: 50vw;
+            min-height: 50vh;
+            bottom: 10vh;
+        }
+    }              
+    
+}
+
+/* for-tablet-landscape-up */
+@media (min-width: 900px) { 
+    .fp-overflow {
+        padding: 0 4em;
+    }
+    #floatNav {
+        flex-direction: column;
+    }
+    
+    #sectHome h1 {
+        font-size: 6.3rem;
+    }
+    #sectHome h2 {
+        font-size: 4.6rem;
+        margin-bottom: 0.5em;
+    }
+    #sectHome h3 {
+        font-size: 2.1rem;
+        margin-bottom: 1.5em;
+    }
+    #sectHome #namaundangan{
+        font-size: 3.2rem;    
+    }
+    #sectHome h4 {
+        font-size: 2rem;
+        margin-bottom: 0.7em;
+    }
+    #sectHome h5 {
+        font-size: 1.4rem;
+    }
+
+    #sectLove #sectLove1 {
+        display: flex;
+    }
+    #sectLove #sectLove1 > p {
+        margin: auto;
+    }
+    #sectLove #sectLove1 h2{
+        margin: 0.1em;
+    }
+    #sectLove #sectLove1a, 
+    #sectLove #sectLove1b  {
+        margin: auto;
+    }
+    
+    #sectLove #sectLove1a,
+    #sectLove #sectLove1b  {
+        min-width: 25vw;
+    }
+    #sectLove #sectLove1a {
+        text-align:right;
+    }
+    #sectLove #sectLove1b {
+        text-align:left;
+    }
+    #sectLove #image-love{
+        margin: 0;
+    }
+    #sectLove #locdate{
+        min-width: 44vw;
+        margin: 0.8em auto 0.8em 0.8em;
+    }    
+    #sectLove #locdate > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #sectLove #locdate > div > div{
+        margin: 0.5em;
+    }
+
+}
+
+/*      for-desktop-up */
+@media (min-width: 1200px) { 
+
+}
+
+/* for-big-desktop-up */
+@media (min-width: 1800px) { 
+    
+}
