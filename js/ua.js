@@ -7,8 +7,15 @@ var themes = {
 };
 
 var songs = [
-    'First Love - instrumental - [u3IydjQzJIg].mp3',
-    'Gary Barlow - Forever Love.mp3'
+    '2meKbkpUpbg.mp3',
+    '5WGTCsk3KC4.mp3',
+    'brDjam33BfE.mp3',
+    'bSv4yesuaMQ.mp3',
+    'f4crKVutaS0.mp3',
+    'u3IydjQzJIg.mp3',
+    'VWEWJDJcA_A.mp3',
+    'W4toJlqM_50.mp3',
+    'YW1k9qhcUEI.mp3'
 ];
 
 function getUrlVars()
@@ -23,7 +30,7 @@ function getUrlVars()
     }
     return vars;
 }
-alert('ok');
+
 
 $(document).ready(function(){
 

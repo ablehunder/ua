@@ -4,14 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Ummul & Aby - Walimatul 'Urs</title>
-  <meta name="description" content="">
+  <meta name="description" content="Ummul Harizah & Aby Herwendo - Walimatul 'Urs, 2023-12-03, Jambi">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
+  <meta property="og:title" content="Ummul & Aby - Walimatul 'Urs">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bit.ly/ummul-aby-wedding">
+  <meta property="og:image" content="tile.png">
+  <meta property="og:description" content="Ummul Harizah & Aby Herwendo - Walimatul 'Urs, 2023-12-03, Jambi">
+  
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -20,24 +21,29 @@
   <link rel="stylesheet" href="css/barebones.css">
   <link rel="stylesheet" href="css/fullpage.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" id="cssTheme" href="css/elegant.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <meta name="theme-color" content="red">
+  <meta name="theme-color" id="themeColor" content="white">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7T616ZG3ZY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T616ZG3ZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-7T616ZG3ZY');
-</script>
+    gtag('config', 'G-7T616ZG3ZY');
+  </script>
 
 </head>
 
 <body>
 
   <!-- Add your site or application content here -->
+
+  <audio autoplay id="bgSong" type="audio/mpeg">
+  </audio>
 
 <!--
 <div id="header"></div>
@@ -47,22 +53,61 @@
 <div id="fp-nav" class="fp-left"><ul><li><a href="#firstPage" class=""><span class="fp-sr-only">firstPage</span><span></span></a></li><li><a href="#secondPage" class=""><span class="fp-sr-only">secondPage</span><span></span></a></li><li><a href="#3rdPage" class=""><span class="fp-sr-only">3rdPage</span><span></span></a></li><li><a href="#undefined" class="active"><span class="fp-sr-only">Section%204</span><span></span></a></li></ul></div>
 -->
 <div id="floatNav">
-  <span class="material-symbols-outlined">
-    favorite
-    </span>
-    <span class="material-symbols-outlined">
-      schedule
-    </span>
-    <span class="material-symbols-outlined">
-      music_off
-    </span>
-    <span class="material-symbols-outlined">
-      <div class="ua-logo-menu"></div>
-    </span>
+    <a href="#love"><label class="material-symbols-outlined">favorite</label></a>
+    <a href="#time"><label class="material-symbols-outlined">schedule</label></a>
+    <a href="#sound"><label id="sound" for="music" class="material-symbols-outlined">music_off</label></a>
+    <a href="#setting"><label id="openSetting" class="material-symbols-outlined">
+        <!-- settings -->
+        <div class="ua-logo-menu"></div>
+    </label></a>
+</div>
+
+<div id="floatSetting">
+  <div id="closeSetting" class="material-symbols-outlined">close</div>
+    
+    <div class="floatSettingContainer">
+      <!--
+      <div id="setting-logo">ini header</div>
+      -->
+      <!-- hide for temporary -->
+      
+      <div id="setting-logo">mmuab</div>
+      
+      <div>
+        <label for="theme" class="material-symbols-outlined">palette</label>
+        <select name="theme" id="theme">
+        </select>
+      </div>
+      <div>
+        <label for="lang" class="material-symbols-outlined">language</label>
+        <select name="lang" id="lang">
+          <option>Indonesia</option>
+          <option>English</option>
+          <option>Jambi</option>
+          <option>Jawa</option>
+        </select>
+      </div>
+      <div>
+        <label for="music" class="material-symbols-outlined">music_note</label>
+        <input type="checkbox" name="music" id="music">
+      </div>
+      <!--
+      <div>
+        <a href="admin.html">Admin</a>
+      </div>
+      <div>
+        <span>Credits:</span>
+      </div>
+      -->
+    </div>
 </div>
 
 <div id="fullpage">
 	<div class="section" id="sectHome">
+    <!-- hide for temporary 
+    <div>hide for temporary</div>
+  -->
+
     <div>
       <div>
         <h2>Walimatul 'Urs</h2>
@@ -70,15 +115,21 @@
       <div class="image-front"></div>
 			<h1>Ummul &amp; Aby</h1>
 			<h3>2023 . 12 . 03</h3>
-			<h4>Yth. Bapak/Ibu/Saudara/i </h4>
-			<h4 id="namaundangan">
-          Prof. DR. H. Fulan bin Fulan, S.E. M.H. M.Kom 
-      </h4>
-			<h5>Mohon maaf jika ada kesalahan <br>penulisan nama dan gelar</h5>
+      <div id="labelundangan">
+        <h4>Yth. Bapak/Ibu/Saudara/i </h4>
+        <h4 id="namaundangan">
+            Prof. DR. H. Fulan bin Fulan, S.E. M.H. M.Kom 
+        </h4>
+        <h5>Mohon maaf jika ada kesalahan <span class="nowrap">penulisan nama dan gelar</span></h5>
+      </div>
     </div>
-	</div>
+
+  </div>
 	<div class="section" id="sectLove">
-		<div>
+    <!-- hide for temporary 
+    <div>hide for temporary</div>
+    -->
+    <div>
       <p>
         Dengan memohon rahmat dan ridho <span class="nowrap">Allah SWT</span> kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada <span class="nowrap">Walimatul 'Urs</span>:
       </p>
@@ -100,7 +151,13 @@
       <div id="sectLove2">
         <div id="image-love"></div>
         <div id="locdate">
-          <h3>Ahad, 3 Desember 2023<br>Gedung LPMP Jambi</h3>
+          <h3> 
+              Ahad, 3 Desember 2023<br>
+              <a href="https://maps.app.goo.gl/i7xQQC4kTmZr7JUS9">
+                <span class="material-symbols-outlined">location_on</span>
+                <u>Gedung LPMP Jambi</u>
+            </a>
+          </h3>
           <div>
             <div class="locdatetime">
               <h4>AKAD NIKAH</h4>
@@ -114,33 +171,14 @@
         </div>
       </div>
     </div>
+
   </div>
-
-  <!--
-	<div class="section" id="sectLocDate">
-		<div class="">
-			<h2>Ahad</h2>
-			<h2>3 Desember 2023</h2>
-			<h2>Gedung LPMP Jambi</h2>
-      <div class="grid-container fifths">
-        <div></div>
-        <div>
-          <h3>AKAD NIKAH</h3>
-          <p>07.00 – 08.00 WIB</p>
-        </div>
-        <div></div>
-        <div>
-          <h3>RESEPSI</h3>
-          <p>10.00 WIB – selesai</p>
-        </div>
-        <div></div>
-      </div>
-    </div>
-	</div>
-  -->  
-
 	<div class="section" id="sectQuote">
-		<div class="sectQuoteContainer">
+    <!-- hide for temporary 
+    <div>hide for temporary</div>
+  -->
+
+    <div class="sectQuoteContainer">
 			<p class="arabic">وَمِن كُلِّ شَىْءٍ خَلَقْنَازَوْجَيْنِ لَعَلَّكُمْ تَذَكَّرُوْنَ
       </p>
       <p>
@@ -150,19 +188,23 @@
       </p>
 		</div>
     <div id="image-decor"></div>
-	</div>
+    <div id="footer-logo">mmuab</div>
+    <!--
+    <div id="footer-logo">ini footer</div>
+    -->
+</div>
 </div>
 
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
   <script type="text/javascript" src="js/vendor/fullpage.min.js"></script>
+  <script src="js/ua.js"></script>
 
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         licenseKey: 'gplv3-license',
-        anchors: ['firstPage', 'secondPage', '3rdPage'],
+        anchors: ['love', 'time', 'quote'],
         // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
         // responsiveHeight: 370,
         // continuousVertical: true,

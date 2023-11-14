@@ -1,0 +1,13 @@
+
+    html{
+        --ua-pallete-1: #f0f0f0;
+        --ua-pallete-2: #000;
+        --ua-pallete-3: #1e1e1e;
+        --ua-pallete-4: #3c3c3c;
+        --ua-pallete-5: #fff;
+
+    }
+    
+    body, #sectHome {
+        background-image: none;
+    }

@@ -1,0 +1,16 @@
+
+html{
+    --ua-pallete-1: #0a0a0a;
+    --ua-pallete-2: #b0b0b0;
+    --ua-pallete-3: #dcdcdc;
+    --ua-pallete-4: #f3f3f3;
+    --ua-pallete-5: #fafafa;
+}
+
+body {
+    background-image: none;
+}
+
+#sectHome {
+    background-image: none;
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ummul & Aby - Walimatul 'Urs</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="tile.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/barebones.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T616ZG3ZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7T616ZG3ZY');
+  </script>
+
+<style>
+  .grid-container {
+    gap:0;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <!-- Add your site or application content here -->
+    <div style="min-height: 25vh;">
+      <h3>Form Admin</h3>
+      <form >
+        <div class="grid-container halves">
+          <label for="noWA">No WhatsApp</label>
+          <input class="u-full-width" type="tel" id="noWA"
+          placeholder="+6281x xxxx xxxx" 
+          value="6281513337229">
+
+          <label for="kepada">Kepada</label>
+          <input class="u-full-width" type="text" id="kepada"
+          placeholder="Bpk Fulan bin Fulan" 
+          value="Aby Herwendo">
+          <label for="pesan">Pesan</label>
+          <div>
+            <textarea class="u-full-width" id="pesan"
+            placeholder="Yth Bapak/Ibu/Saudara/i" 
+            style="height: 20em;">
+Assalaamu'alaykum warohmatullahi wabarokatuhu
+
+Yth. Bpk/Ibu/Saudara/i 
+*$kepada*
+
+Dengan memohon rahmat dan ridho Allah SWT kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada Walimatul 'Urs:
+
+*Ummul Harizah & Aby Herwendo*
+
+yang InsyaaAllah dilaksanakan pada hari *Ahad, 3 Desember 2023* di *Gedung LPMP Jambi* .
+
+Suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do’a restu.
+
+Kami yang berbahagia,
+*Ummul & Aby* beserta *Keluarga Besar*
+
+Klik link berikut untuk info lebih lanjut: 
+$link</textarea>
+          <p style="font-size:0.8em;float: left;">*) Tulisan $kepada akan diubah menjadi nama dalam pesan</p>
+        </div>
+        <div>
+          <input class="button" type="button" id="previewWeb" value="Preview Web">
+          <input class="button" type="button" id="previewWA" value="Preview WA">
+          <input class="button-primary" type="button" id="sendWA" value="Copy Clipboard for WA">
+        </div>
+    </div>
+    </form>
+    </div>
+
+    <div style="height: 70vh;">
+      <iframe src="index.html" style="width: 100%;height: 100vh;" id="frameReview">
+
+      </iframe>
+    </div>  
+  </div>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script -->
+  
+  <!-- script src="https://www.google-analytics.com/analytics.js" async></script-->
+  <script>
+    $(document).ready(function(){
+      var urlTarget = "https://bit.ly/ummul-aby-wedding?s=wa";
+      // var urlTarget = "file:///A:/_%20UA%20Wedding/invitation-website/ua/index.html?s=wa";
+      var getLink = function(){
+        return urlTarget + '&to=' + encodeURI($('#kepada').val());
+      };
+      $('#previewWeb').click(function(e){        
+        e.preventDefault();
+        var link = getLink();
+        // console.info('link:' + link, document.getElementById('frameReview'));
+        
+        $("#frameReview").attr("src", link);
+        // document.getElementById('frameReview').document.src = link;
+      });
+      var getPesanWA = function(){
+        var kepada = $('#kepada').val();
+        var link = getLink();
+        return $('#pesan').val()
+          .replace('$kepada', kepada)
+          .replace('$link', link);
+      };
+      $('#previewWA').click(function(e){        
+        e.preventDefault();
+        alert(getPesanWA());  
+      });
+      $('#sendWA').click(function(e){        
+        e.preventDefault();
+        // var pesan = encodeURI(getPesanWA());
+        var pesan = getPesanWA();
+        var noWA = $('#noWA').val().replace(/\D/g,'');
+        var link = 'https://wa.me/' + noWA ;//+ '?text=' + pesan;
+        console.info(link);
+        navigator.clipboard.writeText(pesan);
+        // $("#frameReview").attr("src", link);
+        window.open(link);
+      });
+    });
+  </script>
+</body>
+
+</html>
