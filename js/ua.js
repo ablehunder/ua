@@ -7,15 +7,15 @@ var themes = {
 };
 
 var songs = [
-    '2meKbkpUpbg.mp3',
-    '5WGTCsk3KC4.mp3',
-    'brDjam33BfE.mp3',
-    'bSv4yesuaMQ.mp3',
-    'f4crKVutaS0.mp3',
-    'u3IydjQzJIg.mp3',
-    'VWEWJDJcA_A.mp3',
-    'W4toJlqM_50.mp3',
-    'YW1k9qhcUEI.mp3'
+    '2meKbkpUpbg',
+    '5WGTCsk3KC4',
+    'brDjam33BfE',
+    'bSv4yesuaMQ',
+    'f4crKVutaS0',
+    'u3IydjQzJIg',
+    'VWEWJDJcA_A',
+    'W4toJlqM_50',
+    'YW1k9qhcUEI'
 ];
 
 function getUrlVars()
@@ -59,36 +59,51 @@ $(document).ready(function(){
             // $('#floatSetting, #fullpage').toggle();
     });
 
-
     // music button
     var playMusic = false;
     var songReady = false;
+    
+    for (let k in songs) {
+        $('#songs').append($('<option>').val(songs[k]).text(songs[k]));
+    } 
+    var playNow = function(){
+        playMusic = $('#music').is(':checked');
+        $('#sound').text(playMusic?'music_note':'music_off');
+        
+        var bgSong = $('#bgSong').get(0);
+        if (bgSong)
+        {
+            if (songReady){
+                if (playMusic) {
+                    // console.info('play');
+                    bgSong.play();
+                }
+                else {
+                    // console.info('pause');
+                    bgSong.pause();
+                }
+            }
+
+        }
+    }
+    $('#songs').on('change', function(){        
+        var song = $('#songs').val();
+        if (song!=null) {
+            $('#bgSong').attr('src', 'songs/' + song + '.mp3');
+            playNow();
+        }
+    });
     var randomSong = songs[Math.floor(Math.random() * songs.length)];
-    $('#bgSong').attr('src', 'songs/' + randomSong);
+    $('#bgSong').attr('src', 'songs/' + randomSong + '.mp3');
     $('#bgSong').get(0).addEventListener("canplay",function(){
         songReady = true;
     });
+    
+    $('#songs').val(randomSong).change();
 
-    $('#music').click(function(){
-            playMusic = $('#music').is(':checked');
-            $('#sound').text(playMusic?'music_note':'music_off');
-            
-            var bgSong = $('#bgSong').get(0);
-            if (bgSong)
-            {
-                if (songReady){
-                    if (playMusic) {
-                        // console.info('play');
-                        bgSong.play();
-                    }
-                    else {
-                        // console.info('pause');
-                        bgSong.pause();
-                    }
-                }
-
-            } 
-    })
+    $('#music').click(function(){ 
+        playNow();
+    });
 
     // theme selector
     var defaultTheme = 'elegant';
