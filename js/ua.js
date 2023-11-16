@@ -25,7 +25,7 @@ function getUrlVars()
     for(var i = 0; i < hashes.length; i++)
     {
         hash = hashes[i].split('=');
-        if (hash[1].indexOf("#")>0) hash[1] = hash[1].split('#')[0];
+        if (hash[1] && hash[1].indexOf("#")>0) hash[1] = hash[1].split('#')[0];
         vars.push(hash[0]);
         vars[hash[0]] = hash[1];
     }
