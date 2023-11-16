@@ -10,7 +10,7 @@
   <meta property="og:title" content="Ummul & Aby - Walimatul 'Urs">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bit.ly/ummul-aby-wedding">
-  <meta property="og:image" content="tile.png">
+  <meta property="og:image" content="og.jpg">
   <meta property="og:description" content="Ummul Harizah & Aby Herwendo - Walimatul 'Urs, 2023-12-03, Jambi">
   
   <link rel="manifest" href="site.webmanifest">
@@ -66,44 +66,46 @@
 </div>
 
 <div id="floatSetting">
-  <div id="closeSetting" class="material-symbols-outlined">close</div>
-    
     <div class="floatSettingContainer">
       <!--
       <div id="setting-logo">ini header</div>
       -->
       <!-- hide for temporary -->
-      
-      <div id="setting-logo">mmuab</div>
-      
       <div>
-        <label for="theme" class="material-symbols-outlined">palette</label>
-        <select name="theme" id="theme">
-        </select>
+        <div id="setting-logo">mmuab</div>
+        
+        <div>
+          <label for="theme" class="material-symbols-outlined">palette</label>
+          <select name="theme" id="theme">
+          </select>
+        </div>
+        <div>
+          <label for="lang" class="material-symbols-outlined">language</label>
+          <select name="lang" id="lang">
+            <option>Indonesia</option>
+            <option>English</option>
+            <option>Jambi</option>
+            <option>Jawa</option>
+          </select>
+        </div>
+        <div>
+          <label for="music" class="material-symbols-outlined">music_note</label>
+          <input type="checkbox" name="music" id="music">
+          <select name="songs" id="songs">
+          </select>
+        </div>
+        <!--
+        <div>
+          <a href="admin.html">Admin</a>
+        </div>
+        <div>
+          <span>Credits:</span>
+        </div>
+        -->
       </div>
-      <div>
-        <label for="lang" class="material-symbols-outlined">language</label>
-        <select name="lang" id="lang">
-          <option>Indonesia</option>
-          <option>English</option>
-          <option>Jambi</option>
-          <option>Jawa</option>
-        </select>
-      </div>
-      <div>
-        <label for="music" class="material-symbols-outlined">music_note</label>
-        <input type="checkbox" name="music" id="music">
-        <select name="songs" id="songs">
-        </select>
-      </div>
-      <!--
-      <div>
-        <a href="admin.html">Admin</a>
-      </div>
-      <div>
-        <span>Credits:</span>
-      </div>
-      -->
+      <div id="closeSetting"><div class="material-symbols-outlined">close</div></div>
+      <div id="floatSettingBg"></div>
+
     </div>
 </div>
 
@@ -113,7 +115,7 @@
     <div>hide for temporary</div>
   -->
 
-    <div>
+    <div id="sectHomeContainer">
       <div>
         <h2>Walimatul 'Urs</h2>
       </div>
@@ -134,7 +136,6 @@
     <!-- hide for temporary 
     <div>hide for temporary</div>
     -->
-    <div>
       <p>
         Dengan memohon rahmat dan ridho <span class="nowrap">Allah SWT</span> kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada <span class="nowrap">Walimatul 'Urs</span>:
       </p>
@@ -153,9 +154,9 @@
           </p>
         </div>
       </div>
+      <!--
       <div id="sectLove2">
         <div id="image-love"></div>
-      <!--
         <div id="locdate">
           <h3> 
               Ahad, 3 Desember 2023<br>
@@ -175,25 +176,24 @@
             </div>
           </div>
         </div>
+    </div>
       -->
-    </div>
-    </div>
-
+      <div id="image-love-container"><div id="image-love">&nbsp;</div></div>
   </div>
   <div class="section" id="sectLocDate">
     <div id="sectLocDate1">
       <h3> 
-        Ahad, 3 Desember 2023<br>
+        Ahad<br>3 Desember 2023<br>
         <a href="https://maps.app.goo.gl/i7xQQC4kTmZr7JUS9">
           Gedung LPMP Jambi
         </a>
       </h3>
-      <div>
-        <div class="locdatetime">
+      <div class="locdatetime">
+        <div>
           <h4>AKAD NIKAH</h4>
           <h5>07.00 – 08.00 WIB</h5>
         </div>
-        <div class="locdatetime">
+        <div>
           <h4>RESEPSI</h4>
           <h5>10.00 WIB – selesai</h5>
         </div>
@@ -201,7 +201,16 @@
     </div>
     <div id="sectLocDate2">
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15953.003936164401!2d103.5892112!3d-1.6060401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25885f168cf2ef%3A0x3de9873943e6a0b!2sLPMP%20JAMBI!5e0!3m2!1sen!2sid!4v1699980260595!5m2!1sen!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe 
+      id="gmaps"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15953.003936164401!2d103.5892112!3d-1.6060401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25885f168cf2ef%3A0x3de9873943e6a0b!2sLPMP%20JAMBI!5e0!3m2!1sen!2sid!4v1699980260595!5m2!1sen!2sid" 
+      width="95%" 
+      height="200" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
     </div>
   </div>
 	<div class="section" id="sectQuote">
@@ -213,8 +222,7 @@
 			<p class="arabic">وَمِن كُلِّ شَىْءٍ خَلَقْنَازَوْجَيْنِ لَعَلَّكُمْ تَذَكَّرُوْنَ
       </p>
       <p>
-        Dan segala sesuatu Kami ciptakan berpasang-pasangan <br>
-        agar kamu mengingat (kebesaran Allah)<br>
+        Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)<br>
  الذّٰريٰت : ٤٩
       </p>
 		</div>
@@ -231,20 +239,6 @@
   <script src="js/plugins.js"></script>
   <script src="js/ua.js"></script>
   <script type="text/javascript" src="js/vendor/fullpage.min.js"></script>
-
-<script type="text/javascript">
-    var myFullpage = new fullpage('#fullpage', {
-        licenseKey: 'gplv3-license',
-        anchors: ['love', 'time', 'quote'],
-        // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-        // responsiveHeight: 370,
-        // continuousVertical: true,
-        // loopBottom: true, loopTop: true,
-        navigation: true,
-        navigationPosition: 'left',
-        css3: true        
-    });
-</script>
 <style>
 
 </style>

@@ -25,6 +25,7 @@ function getUrlVars()
     for(var i = 0; i < hashes.length; i++)
     {
         hash = hashes[i].split('=');
+        if (hash[1].indexOf("#")>0) hash[1] = hash[1].split('#')[0];
         vars.push(hash[0]);
         vars[hash[0]] = hash[1];
     }
@@ -135,4 +136,15 @@ $(document).ready(function(){
     $('#theme').val(selectedTheme).change();
 
 
+    var myFullpage = new fullpage('#fullpage', {
+        licenseKey: 'gplv3-license',
+        anchors: ['front','love', 'time', 'quote'],
+        // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+        // responsiveHeight: 370,
+        // continuousVertical: true,
+        // loopBottom: true, loopTop: true,
+        navigation: true,
+        navigationPosition: 'left',
+        css3: true        
+    });
 });
