@@ -63,6 +63,7 @@ $(document).ready(function(){
     // music button
     var playMusic = false;
     var songReady = false;
+    // var songReady = true;
     
     for (let k in songs) {
         $('#songs').append($('<option>').val(songs[k]).text(songs[k]));
@@ -72,9 +73,13 @@ $(document).ready(function(){
         $('#sound').text(playMusic?'music_note':'music_off');
         
         var bgSong = $('#bgSong').get(0);
+
+        console.info(bgSong);
         if (bgSong)
         {
+            console.info(songReady);
             if (songReady){
+                console.info(playMusic);
                 if (playMusic) {
                     // console.info('play');
                     bgSong.play();
@@ -90,12 +95,13 @@ $(document).ready(function(){
     $('#songs').on('change', function(){        
         var song = $('#songs').val();
         if (song!=null) {
-            $('#bgSong').attr('src', 'songs/' + song + '.mp3');
+            $('#bgSong source').attr('src', 'songs/' + song + '.mp3');
+            $('#bgSong').get(0).load();
             playNow();
         }
     });
     var randomSong = songs[Math.floor(Math.random() * songs.length)];
-    $('#bgSong').attr('src', 'songs/' + randomSong + '.mp3');
+    //$('#bgSong source').attr('src', 'songs/' + randomSong + '.mp3');
     $('#bgSong').get(0).addEventListener("canplay",function(){
         songReady = true;
     });
