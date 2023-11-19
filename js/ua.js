@@ -183,7 +183,7 @@ $(document).ready(function(){
                 },
                 'love'  : {
                     'intro': 'You are cordially invited to <span class="nowrap">Wedding Celebration</span>:',
-                    'parentBride': 'Daughter of <span class="nowrap">Mr. Abdul Kadir Sobur</span> <br>and <span class="nowrap">Mrs. Rosmala</span>',
+                    'parentBride': 'Daughter of <br><span class="nowrap">Mr. Abdul Kadir Sobur</span> <br>and <span class="nowrap">Mrs. Rosmala</span>',
                     'parentGroom': 'Son of <br><span class="nowrap">Mr. M. Yassir Aragil (alm.)</span> <br>dan <span class="nowrap">Mrs. Susyandari</span>'
                 },
                 'time'  : {'place': 'Sunday<br>December 3rd, 2023<br>LPMP Jambi Building', 'akad': '07.00 - 08.00 GMT+7', 'akadHeading': 'Ceremonial', 'resepsi': 'start at 10.00 GMT+7', 'resepsiHeading': 'Banquet'},
