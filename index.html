@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bit.ly/ummul-aby">
   <meta property="og:image" content="https://ablehunder.github.io/ua/og.jpg">
-  <meta property="og:description" content="Ahad, 3 Desember 2023 @ Gedung LPMP Jambi">
+  <meta property="og:description" content="Ahad, 3 Desember 2023 @ Jambi">
   
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Ummul & Aby - Walimatul 'Urs">
@@ -19,22 +19,29 @@
   <meta property="twitter:domain" content="ablehunder.github.io">
   <meta property="twitter:url" content="https://bit.ly/ummul-aby">
   <meta property="twitter:image" content="https://ablehunder.github.io/ua/og.jpg">
-  <meta property="twitter:description" content="Ahad, 3 Desember 2023 @ Gedung LPMP Jambi">
+  <meta property="twitter:description" content="Ahad, 3 Desember 2023 @ Jambi">
   
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+  <link rel="icon" type="image/png" href="https://ablehunder.github.io/ua/img/ua-logo-bw-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://ablehunder.github.io/ua/img/ua-logo-bw-96x96.png" sizes="96x96">
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/barebones.css">
   <link rel="stylesheet" href="css/fullpage.min.css">
+  <style>#fullpage,#floatNav{display:none;}</style>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" id="cssTheme" href="css/elegant.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <meta name="theme-color" id="themeColor" content="white">
+  <meta name="theme-color" id="themeColor" content="blue">
 
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
+
+  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T616ZG3ZY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,22 +52,11 @@
   </script>
 
 </head>
-
 <body>
-
-  <!-- Add your site or application content here -->
-
-  <audio id="bgSong" loop>
-    <source src=""
-    type="audio/mp3">
-  </audio>
-
+  <audio id="bgSong" loop><source src="" type="audio/mp3"></audio>
 <!--
 <div id="header"></div>
 <div id="footer"><img src="img/ua-love.png" /></div>
--->
-<!--
-<div id="fp-nav" class="fp-left"><ul><li><a href="#firstPage" class=""><span class="fp-sr-only">firstPage</span><span></span></a></li><li><a href="#secondPage" class=""><span class="fp-sr-only">secondPage</span><span></span></a></li><li><a href="#3rdPage" class=""><span class="fp-sr-only">3rdPage</span><span></span></a></li><li><a href="#undefined" class="active"><span class="fp-sr-only">Section%204</span><span></span></a></li></ul></div>
 -->
 <div id="floatNav">
     <a href="#love"><label class="material-symbols-outlined">favorite</label></a>
@@ -77,13 +73,8 @@
 
 <div id="floatSetting">
     <div class="floatSettingContainer">
-      <!--
-      <div id="setting-logo">ini header</div>
-      -->
-      <!-- hide for temporary -->
       <div>
-        <div id="setting-logo">mmuab</div>
-        
+        <div id="setting-logo"><!--mmuab  -->&#xe04c;mmu&#xe015;ab&#xe055;</div>        
         <div>
           <label for="theme" class="material-symbols-outlined">palette</label>
           <select name="theme" id="theme">
@@ -92,10 +83,10 @@
         <div>
           <label for="lang" class="material-symbols-outlined">language</label>
           <select name="lang" id="lang">
-            <option>Indonesia</option>
-            <option>English</option>
-            <option>Jambi</option>
-            <option>Jawa</option>
+            <option value="id">Indonesia</option>
+            <option value="en">English</option>
+            <option value="jb">Jambi</option>
+            <option value="jv">Jawa</option>
           </select>
         </div>
         <div>
@@ -104,161 +95,109 @@
           <select name="songs" id="songs">
           </select>
         </div>
-        <!--
-        <div>
-          <a href="admin.html">Admin</a>
-        </div>
-        <div>
-          <span>Credits:</span>
-        </div>
-        -->
       </div>
       <div id="closeSetting"><div class="material-symbols-outlined">close</div></div>
       <div id="floatSettingBg"></div>
-
     </div>
 </div>
-
 <div id="fullpage">
+  <!-- sectHome -->
 	<div class="section" id="sectHome">
-    <!-- hide for temporary 
-    <div>hide for temporary</div>
-  -->
-
     <div id="sectHomeContainer">
-      <div>
-        <h2>Walimatul 'Urs</h2>
-      </div>
-      <div class="image-front"></div>
-			<h1>Ummul &amp; Aby</h1>
-			<h3>2023 . 12 . 03</h3>
-      <div id="labelundangan">
-        <h4>Yth. Bapak/Ibu/Saudara/i </h4>
-        <h4 id="namaundangan">
-            Prof. DR. H. Fulan bin Fulan, S.E. M.H. M.Kom 
-        </h4>
-        <h5>Mohon maaf jika ada kesalahan <span class="nowrap">penulisan nama dan gelar</span></h5>
+      <div class="image-front landscape"></div>
+      <div id="sectHomeText">
+        <div>
+          <h2 data-i18n="home.celebration">Walimatul 'Urs</h2>
+        </div>
+        <div class="image-front no-landscape"></div>
+        <div>
+          <h1>Ummul &amp; Aby</h1>
+          <h3>2023 . 12 . 03</h3>
+        </div>
+        <div id="labelundangan">
+          <h4 data-i18n="home.greetName">Yth. Bapak/Ibu/Saudara/i </h4>
+          <h4 id="namaundangan">
+              Prof. DR. H. Fulan bin Fulan, S.E. M.H. M.Kom 
+          </h4>
+          <h5 data-i18n="[html]home.sorryName">Mohon maaf jika ada kesalahan <span class="nowrap">penulisan nama dan gelar</span></h5>
+        </div>
       </div>
     </div>
-
   </div>
+  <!-- sectLove -->
 	<div class="section" id="sectLove">
-    <!-- hide for temporary 
-    <div>hide for temporary</div>
-    -->
-      <p>
+    <div id="sectLoveContainer">
+      <p data-i18n="[html]love.intro">
         Dengan memohon rahmat dan ridho <span class="nowrap">Allah SWT</span> kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada <span class="nowrap">Walimatul 'Urs</span>:
       </p>
-    <div id="sectLove1">
+      <div id="sectLove1">
         <div id="sectLove1a">
           <h1>Ummul Harizah</h1>
-          <p>
+          <p data-i18n="[html]love.parentBride">
             Putri dari <br><span class="nowrap">Bapak Abdul Kadir Sobur</span> <br>dan <span class="nowrap">Ibu Rosmala</span>
           </p>
         </div>
         <h2>&</h2>
         <div id="sectLove1b">
           <h1>Aby Herwendo</h1>
-          <p>
+          <p data-i18n="[html]love.parentGroom">
             Putra dari <br><span class="nowrap">Bapak M. Yassir Aragil (alm.)</span> <br>dan <span class="nowrap">Ibu Susyandari</span>
           </p>
         </div>
       </div>
-      <!--
-      <div id="sectLove2">
-        <div id="image-love"></div>
-        <div id="locdate">
-          <h3> 
-              Ahad, 3 Desember 2023<br>
-              <a href="https://maps.app.goo.gl/i7xQQC4kTmZr7JUS9">
-                <span class="material-symbols-outlined">location_on</span>
-                <u>Gedung LPMP Jambi</u>
-            </a>
-          </h3>
+      <div id="image-love">&nbsp;</div>
+    </div>
+  </div>
+  <!-- sectLocDate -->
+  <div class="section" id="sectLocDate">
+    <div id="sectLocDateContainer">
+      <div id="sectLocDate1">
+        <h3 data-i18n="[html]time.place">
+          Ahad<br>3 Desember 2023<br>
+            Gedung LPMP Jambi
+        </h3>
+        <div class="locdatetime">
           <div>
-            <div class="locdatetime">
-              <h4>AKAD NIKAH</h4>
-              <h5>07.00 – 08.00 WIB</h5>
-            </div>
-            <div class="locdatetime">
-              <h4>RESEPSI</h4>
-              <h5>10.00 WIB – selesai</h5>
-            </div>
+            <h4 data-i18n="time.akadHeading">AKAD NIKAH</h4>
+            <h5 data-i18n="time.akad">07.00 – 08.00 WIB</h5>
+          </div>
+          <div>
+            <h4 data-i18n="time.resepsiHeading">RESEPSI</h4>
+            <h5 data-i18n="time.resepsi">10.00 WIB – selesai</h5>
           </div>
         </div>
-    </div>
-      -->
-      <div id="image-love-container"><div id="image-love">&nbsp;</div></div>
-  </div>
-  <div class="section" id="sectLocDate">
-    <div id="sectLocDate1">
-      <h3> 
-        Ahad<br>3 Desember 2023<br>
-        <a href="https://maps.app.goo.gl/i7xQQC4kTmZr7JUS9">
-          Gedung LPMP Jambi
-        </a>
-      </h3>
-      <div class="locdatetime">
-        <div>
-          <h4>AKAD NIKAH</h4>
-          <h5>07.00 – 08.00 WIB</h5>
-        </div>
-        <div>
-          <h4>RESEPSI</h4>
-          <h5>10.00 WIB – selesai</h5>
-        </div>
+      </div>
+      <div id="sectLocDate2">
+        <iframe 
+          id="gmaps"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15953.003936164401!2d103.5892112!3d-1.6060401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25885f168cf2ef%3A0x3de9873943e6a0b!2sLPMP%20JAMBI!5e0!3m2!1sen!2sid!4v1699980260595!5m2!1sen!2sid" 
+          width="95%" 
+          height="200" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
-    <div id="sectLocDate2">
-
-    <iframe 
-      id="gmaps"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15953.003936164401!2d103.5892112!3d-1.6060401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25885f168cf2ef%3A0x3de9873943e6a0b!2sLPMP%20JAMBI!5e0!3m2!1sen!2sid!4v1699980260595!5m2!1sen!2sid" 
-      width="95%" 
-      height="200" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    </div>
   </div>
+  <!-- sectQuote -->
 	<div class="section" id="sectQuote">
-    <!-- hide for temporary 
-    <div>hide for temporary</div>
-  -->
-
+    <div id="image-decor"></div>
     <div class="sectQuoteContainer">
 			<p class="arabic">وَمِن كُلِّ شَىْءٍ خَلَقْنَازَوْجَيْنِ لَعَلَّكُمْ تَذَكَّرُوْنَ
       </p>
       <p>
-        Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)<br>
+        <span data-i18n="quote.translation">Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)</span><br>
  الذّٰريٰت : ٤٩
       </p>
 		</div>
-    <div id="image-decor"></div>
-    <div id="footer-logo">mmuab</div>
-    <!--
-    <div id="footer-logo">ini footer</div>
-    -->
+    <div id="footer-logo"><!--mmuab  -->&#xe04c;mmu&#xe015;ab&#xe055;</div>
 </div>
 </div>
-
-
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/vendor/fullpage.min.js"></script>
   <script src="js/ua.js"></script>
-  <script type="text/javascript" src="js/vendor/fullpage.min.js"></script>
-<style>
-
-</style>
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <!-- script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script -->
-  
-  <!-- script src="https://www.google-analytics.com/analytics.js" async></script-->
 </body>
-
 </html>
