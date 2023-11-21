@@ -108,13 +108,21 @@ $(document).ready(function(){
     $('#theme').on('change', function(){
         var theme = $('#theme').val();
         if (theme==null) theme = defaultTheme;
-        $('#cssTheme').attr('href', 'css/' + theme + '.css');
-
         var bodyStyles = window.getComputedStyle(document.body);
-        var themeColor = bodyStyles.getPropertyValue('--ua-pallete-3');
-        $("#themeColor").attr('content', themeColor);
+        var oldthemeColor = bodyStyles.getPropertyValue('--ua-pallete-3');
+        $('#cssTheme').attr('href', 'css/' + theme + '.css');
+        var vtimer = setTimeout(function(){
+            // console.info('check new cssTheme');
+            var themeColor = bodyStyles.getPropertyValue('--ua-pallete-3');
+            if(oldthemeColor != themeColor){
+                // console.info('new cssTheme fetched');
+                $("#themeColor").attr('content', themeColor);    
+                clearTimeout(vtimer);
+            }
+        }, 1000);
     });
-
+    
+    
     var selectedTheme = params['theme'];
     if (!selectedTheme) selectedTheme = 'elegant';
     if (selectedTheme=='random'){
