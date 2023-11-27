@@ -90,7 +90,6 @@ $(document).ready(function(){
     if (!selectedSong) selectedSong = 'random';
     if (selectedSong=='random'){
         var r = Math.floor(Math.random() * Object.keys(songs).length);
-        var selectedSong = null;
         var c = 0;
         for (let k in songs) {
             if (c++ == r) selectedSong = k;
