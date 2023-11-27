@@ -677,6 +677,19 @@ body,
     font-size: 1.5rem;
 }
 
+#sectHome #namaundangan.regular {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+#sectHome #namaundangan.futuristic {
+    font-family: FuturisticStylish;
+}
+
+#sectHome #namaundangan.script {
+    font-family: BrittanySignature;
+}
+
 #sectHome h4 {
     font-size: 0.9rem;
     margin-bottom: 0.2rem;
@@ -932,6 +945,10 @@ body,
         font-size: 1.6rem;
     }
 
+    #sectHome #namaundangan.regular {
+        font-size: 1.2rem;
+    }    
+
     #sectHome h4 {
         font-size: 0.8rem;
         margin-bottom: 0.7rem;
@@ -1174,7 +1191,10 @@ body,
         #sectHome #namaundangan {
             font-size: 3.2rem;
         }
-
+        #sectHome #namaundangan.regular {
+            font-size: 2rem;
+        }    
+    
         #sectHome h4 {
             font-size: 1.4rem;
             margin-bottom: 0.1rem;
@@ -1250,6 +1270,11 @@ body,
         font-size: 3.2rem;
         margin-bottom: 0.1em;
     }
+
+    #sectHome #namaundangan.regular {
+        font-size: 2.2rem;
+    }    
+
 
     #sectHome h4 {
         font-size: 1.8rem;
@@ -1353,6 +1378,10 @@ body,
             margin-bottom: 0.1em;
         }
 
+        #sectHome #namaundangan.regular {
+            font-size: 1.8rem;
+        }    
+    
         #sectHome h4 {
             font-size: 1.4rem;
             margin-bottom: 0.4rem;

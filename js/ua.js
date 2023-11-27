@@ -138,6 +138,13 @@ $(document).ready(function(){
     // console.info('theme:', selectedTheme);
     $('#theme').val(selectedTheme).change();
 
+    // font for label
+    var selectedLabel = params['label'];
+    if (selectedLabel) {
+        $('#namaundangan').addClass(selectedLabel);
+    }
+
+
     // fullpage
     var myFullpage = new fullpage('#fullpage', {
         licenseKey: 'gplv3-license',
