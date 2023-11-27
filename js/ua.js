@@ -37,7 +37,7 @@ $(document).ready(function(){
 
     var params=getUrlVars()
 
-    var nama = (params && params['to'])? decodeURI(params['to']) : '';
+    var nama = (params && params['to'])? decodeURIComponent(params['to']) : '';
     
     $('#namaundangan').text(nama);
     if (!nama || (nama && (nama.length==0))) $('#labelundangan').hide();
@@ -85,14 +85,18 @@ $(document).ready(function(){
     $('#bgSong').get(0).addEventListener("canplay",function(){
         songReady = true;
     });
-    
-    var r = Math.floor(Math.random() * Object.keys(songs).length);
-    var randomSong = null;
-    var c = 0;
-    for (let k in songs) {
-        if (c++ == r) randomSong = k;
+
+    var selectedSong = params['song'];
+    if (!selectedSong) selectedSong = 'random';
+    if (selectedSong=='random'){
+        var r = Math.floor(Math.random() * Object.keys(songs).length);
+        var selectedSong = null;
+        var c = 0;
+        for (let k in songs) {
+            if (c++ == r) selectedSong = k;
+        }
     }
-    $('#songs').val(randomSong).change();
+    $('#songs').val(selectedSong).change();
 
     $('#music').click(function(){ 
         playNow();
