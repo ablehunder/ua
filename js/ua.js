@@ -164,6 +164,12 @@ $(document).ready(function(){
         i18next.changeLanguage(ln);
         $('body').localize();
     });
+
+    var selectedLang = params['lang'];
+    if (selectedLang) {
+        $('#lang').val(selectedLang).change();
+    }
+
     // use plugins and options as needed, for options, detail see
     // https://www.i18next.com
     i18next 
@@ -188,7 +194,7 @@ $(document).ready(function(){
                     'parentBride': 'Putri dari <br><span class="nowrap">Bapak Abdul Kadir Sobur</span> <br>dan <span class="nowrap">Ibu Rosmala</span>',
                     'parentGroom': 'Putra dari <br><span class="nowrap">Bapak M. Yassir Aragil (alm.)</span> <br>dan <span class="nowrap">Ibu Susyandari</span>'
                 },
-                'time'  : {'place': 'Ahad<br>3 Desember, 2023<br>Gedung LPMP Jambi', 'akad': '07.00 - 08.00 WIB', 'akadHeading': 'Akad Nikah', 'resepsi': '10.00 WIB - selesai', 'resepsiHeading': 'Resepsi'},
+                'time'  : {'place': 'Ahad<br>3 Desember 2023<br>Gedung LPMP Jambi', 'akad': '07.00 - 08.00 WIB', 'akadHeading': 'Akad Nikah', 'resepsi': '10.00 WIB - selesai', 'resepsiHeading': 'Resepsi'},
                 'quote' : {'translation': 'Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)'}
             }
         },
@@ -220,7 +226,7 @@ $(document).ready(function(){
                     'parentBride': 'Putri <br><span class="nowrap">Bapak Abdul Kadir Sobur</span> <br>kaliyan <span class="nowrap">Ibu Rosmala</span>',
                     'parentGroom': 'Putra <br><span class="nowrap">Bapak M. Yassir Aragil (alm.)</span> <br>kaliyan <span class="nowrap">Ibu Susyandari</span>'
                 },
-                'time'  : {'place': 'Ahad<br>3 Desember, 2023<br>Gedung LPMP Jambi', 'akad': '07.00 - 08.00 WIB', 'akadHeading': 'Akad Nikah', 'resepsi': '10.00 WIB - rampung', 'resepsiHeading': 'Resepsi'},
+                'time'  : {'place': 'Ahad<br>3 Desember 2023<br>Gedung LPMP Jambi', 'akad': '07.00 - 08.00 WIB', 'akadHeading': 'Akad Nikah', 'resepsi': '10.00 WIB - rampung', 'resepsiHeading': 'Resepsi'},
                 'quote' : {'translation': 'Lan samubarang iku padha Ingsun titahaké ajodhon-jodhon, darapon sira padha angalap éling'}
             }
             
