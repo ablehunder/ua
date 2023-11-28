@@ -158,18 +158,6 @@ $(document).ready(function(){
         css3: true        
     });
 
-    // lang
-    $('#lang').on('change', function(){
-        var ln = $(this).val();
-        i18next.changeLanguage(ln);
-        $('body').localize();
-    });
-
-    var selectedLang = params['lang'];
-    if (selectedLang) {
-        $('#lang').val(selectedLang).change();
-    }
-
     // use plugins and options as needed, for options, detail see
     // https://www.i18next.com
     i18next 
@@ -245,4 +233,16 @@ $(document).ready(function(){
         $('body').localize();
     });
 
+    // lang
+    $('#lang').on('change', function(){
+        var ln = $(this).val();
+        i18next.changeLanguage(ln);
+        $('body').localize();
+    });
+
+    var selectedLang = params['lang'];
+    if (selectedLang) {
+        $('#lang').val(selectedLang).change();
+    }
+    
 });
